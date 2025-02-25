@@ -6,6 +6,7 @@ out/
 .idea/
 *.iml
 Clone3/
+theory/
 
 ### Eclipse ###
 .apt_generated

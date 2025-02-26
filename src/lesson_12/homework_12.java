@@ -1,4 +1,4 @@
-package homework_12;
+package lesson_12;
 
 /*
 

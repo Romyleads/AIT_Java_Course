@@ -1,4 +1,4 @@
-package lesson11;
+package lesson_11;
 
 // Ctrl + / - закомментировать строку
 //На компьютере будет создан файл Hello.java

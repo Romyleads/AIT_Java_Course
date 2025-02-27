@@ -1,4 +1,4 @@
-package lesson_22;
+package homeworks.hw_22;
 import java.util.Arrays;
 import java.lang.reflect.Array;
 

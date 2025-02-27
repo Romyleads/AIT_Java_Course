@@ -1,4 +1,4 @@
-package lesson_22;
+package homeworks.hw_22;
 
 /*** Author: Roman Romashko Date: 26.02.2025 ***/
 

@@ -73,7 +73,7 @@ public class Les22Main {
         magik.test();
 
         // Выводим индекс последнего вхождения 100
-        System.out.println("lastIndexOf(100):"+magik.lastIndexOf(100)); // ? -->5
+        System.out.println("lastIndexOf(0):"+magik.lastIndexOf(0)); // ? -->5
 
         // Удаляем первое вхождение 100
         System.out.println("removeByValue(100):"+magik.removeByValue(100)); // ? -->True

@@ -1,4 +1,4 @@
-package homeworks.hw_22;
+package homeworks.hw_23;
 
 import java.util.Arrays;
 

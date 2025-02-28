@@ -14,6 +14,11 @@ public class ArrayEncapsTest {
         magic.add(10); // у нас создался новый массив
         // magic.test();
 
+        // Что может делать пользователь не нужного
+        //magic.array[1]=10000;
+        //magic.array=new int[5];
+
+        //magic.test();
 
         System.out.println(magic.toString());
 

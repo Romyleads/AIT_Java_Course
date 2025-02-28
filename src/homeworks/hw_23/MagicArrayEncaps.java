@@ -15,6 +15,8 @@ public class MagicArrayEncaps {
         this.cursor = 0;
     }
 
+
+
     public MagicArrayEncaps(int[] array) {
         //Todo Homework
 
@@ -43,7 +45,7 @@ public class MagicArrayEncaps {
     }
 
     // Добавление в массив одного элемента
-    private void add(int value) {
+    public void add(int value) {
 
         // Проверка! Есть ли свободное место во внутреннем массиве, а если нет, то добавить место
 

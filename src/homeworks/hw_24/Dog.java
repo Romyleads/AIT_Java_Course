@@ -47,9 +47,20 @@ public class Dog {
     }
 
     public void train() {
+
+
+
         // Тренируемся если предел не наступил
         if (curHeight < maxHeight) {
-            curHeight += 10;
+
+            double increase = 10;
+            // Если прибавление 10 см превысит максимум, прибавляем только разницу до maxHeight
+            if (curHeight + increase > maxHeight) {
+                increase = maxHeight - curHeight;   // рассчитываем разницу до максимума
+            }
+
+            curHeight += increase;
+            //curHeight += 10;
             System.out.println("Я тренируюсь! Моя текущая высота прыжка: " + curHeight);
         } else {
             System.out.println("Я достигла максимальной высоты прыжка!");
@@ -76,11 +87,14 @@ public class Dog {
                 while (curHeight < barHeight) {
                     train();
                 }
-                if (curHeight >= barHeight) {
-                    System.out.println("Бинго!");
-                    jump();
-                    return;
-                }
+                //if (curHeight >= barHeight) {
+                //    System.out.println("Бинго!");
+                //    jump();
+                //    return;
+                //}
+
+                System.out.println("Бинго!");
+                jump(); // выполняем прыжок
             } else {
                 System.out.println("Извини друг! Тут тренировки не помогут!");
             }

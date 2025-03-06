@@ -1,4 +1,4 @@
-package lesson_27.shapes;
+package lesson_27.bus;
 
 /*** Author: Roman Romashko Date: 05.03.2025 ***/
 

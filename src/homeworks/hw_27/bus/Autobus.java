@@ -61,6 +61,20 @@ public class Autobus {
 
     @Override
     public String toString() {
+
+        StringBuilder sb = new StringBuilder("Autobus: {id ");
+        sb.append(id).append("; capacity: ").append(capacity);
+        sb.append("; driver: ").append(driver.toString());
+
+        sb.append("; autopilot: ").append(autopilot.toString());
+
+        sb.append("; passengers: ").append(countPassengers);
+
+        sb.append("}");
+
+        return sb.toString();
+
+/*
         return "Autobus{" +
                 "id=" + id +
                 ", driver=" + driver.toString() +
@@ -68,6 +82,9 @@ public class Autobus {
                 ", capacity=" + capacity +
                // ", get='" + get + '\'' +
                 '}';
+
+
+ */
     }
         public void showListPassengers() {
 
@@ -101,10 +118,12 @@ public class Autobus {
      */
        if (countPassengers < capacity) {
            // Место есть
-
-           if (isPassengerInBus(passenger)) {
+           // надо проверить п.2.
+           if (isPassengerInBus(passenger) >=0 ) {
                // Пассажир уже внутри
-               System.out.printf("Пассажир с id %d уже в автобусе с id %d\n", passenger.getId(), this.id);
+               // метод вернул 0 или больше (валидный индекс) - значит пассажир в автобусе
+
+               System.out.printf("Пассажир с id %d уже в автобусе с id (%d)\n", passenger.getId(), this.id);
                return false;
            }
 
@@ -117,18 +136,55 @@ public class Autobus {
        return false;
    }
 
-    private boolean isPassengerInBus(Passenger passenger){
+    private int isPassengerInBus(Passenger passenger){
 
         for (int i = 0; i < countPassengers; i++) {
             if (passengers[i].getId() == passenger.getId()){
                 // id совпали - значит єто один и тот же объект
-                return true;
+                return i;
 
             }
         }
-        return false; // Не найден
+        return -1;  // Не найден
     }
 
+    public boolean dropPassenger(Passenger passenger){
+        /*
+        1. Убедиться, что пассажир в автобусе если нет вернуть false
+        2. Удалить его из массива ->
+        2.1. Сдвинуть всех пассажиров "справа" от него.
+        2.2. Не забыть изменить кол-во пассажиров
+        2.3. Вернуть true
+
+         */
+
+        if (passenger == null || countPassengers == 0) return false;
+
+        int index = isPassengerInBus(passenger);
+
+        if (index == -1){
+
+            System.out.printf("Пассажир с id %d в автобусе (%d)не найден", passenger.getId(),this.getId());
+            return false;
+        }
+
+        // Удаление пассажира их списка
+
+        for (int i = index; i < countPassengers - 1; i++) {
+
+            passengers [i] = passengers [i + 1];
+
+        }
+
+// Не обязательная
+
+        passengers[countPassengers-1] = null;
+
+        countPassengers--;
+        System.out.printf("Пассажир (%d) вышел из автобуса (%d)\n",passenger.getId(),this.id);
+        return true;
+
+    }
     public int getId() {
         return id;
     }

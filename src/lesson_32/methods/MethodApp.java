@@ -21,7 +21,37 @@ public abstract class MethodApp {
 
         //int[] intArray{1, 2, 3, 4, 5, 6};
 
-            //Utils.swap(intArray, 1,2); // массив примитивов
+        //Utils.swap(intArray, 1,2); // массив примитивов
+
+        MyList<Double> doubleList = new MyArrayList<>(new Double[]{1.5,2.5,3.5});
+
+        Double firstValue = Utils.getFirstElement(doubleList);
+        System.out.println("firstValue: " + firstValue);
+
+        System.out.println("==================================");
+
+        MyList<String> StringList = new MyArrayList<>(strings);
+
+        String firstStringsValue = Utils.getFirstElement(StringList);
+        System.out.println("firstStringsValue: " + firstStringsValue);
+
+        System.out.println("==================================");
+
+        //int sum = Utils.sumElements("A","B"); // Типо-безопасность от extends Number
+        int sum = Utils.sumElements(1,2.99);
+        System.out.println("sum: " + sum);
+
+        System.out.println("==================================");
+
+        double sumD = Utils.listSum(doubleList);
+        System.out.println("sumD: " + sumD);
+
+        System.out.println("==================================");
+
+        MyList<Integer> integerList = new MyArrayList<>(integers);
+        Utils.addNumbers(integerList);
+
+
 
     }
 }

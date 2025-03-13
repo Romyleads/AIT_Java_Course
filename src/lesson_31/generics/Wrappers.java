@@ -5,29 +5,17 @@ package lesson_31.generics;
 public class Wrappers {
 
     // Классы - обертки используются для представления примитивных типов как объектов (как ссылочных)
-
     /*
-
     Byte - обертка byte
-
     Short - обертка short
-
     Integer - обертка int
-
     Long - обертка long
-
     Float - обертка float
-
     Double - обертка double
-
     Character- обертка char
-
     Boolean - обертка boolean
-
 */
-
     public static void main(String[] args) {
-
 
         Integer maxValue = Integer.MAX_VALUE;
 

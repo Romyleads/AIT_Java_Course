@@ -57,4 +57,19 @@ public class Human {
         System.out.printf("%s нужно %d минут отдыха\n", humanType, restTime);
     }
 
+    @Override
+    public String toString() {
+        return "Human [runSpeed=" + runSpeed + ", restTime=" + restTime + ", humanType=" + humanType + "]";
+    }
+    /* */
+    // @Override
+    // public String toString() {
+    //     StringBuilder sb =  new StringBuilder();
+    //     sb.append("Human [runSpeed=").append(runSpeed)
+    //     .append(", restTime=").append(restTime)
+    //     .append(", humanType=").append(humanType)
+    //     .append("]");
+    //     return sb.toString();
+    // }
+    
 }

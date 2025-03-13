@@ -31,6 +31,7 @@ public class HumanApp {
             humans[i].run();
             System.out.println();
         }
+        
 
     }
 }

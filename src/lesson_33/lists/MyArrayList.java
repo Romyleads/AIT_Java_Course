@@ -2,10 +2,13 @@ package lesson_33.lists;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Objects;
 
 /*** Author: Roman Romashko Date: 11.03.2025 ***/
 //<T> implements MyList<T>
+
+//public class MyArrayList<T> implements MyList<T>, Iterable<T> {
 public class MyArrayList<T> implements MyList<T> {
     private T[] array;
     private int cursor; // по умолчанию 0
@@ -205,8 +208,8 @@ public class MyArrayList<T> implements MyList<T> {
         // Если ничего - вернуть -1
 
         for (int i = 0; i < cursor; i++) {
-            if (Objects.equals(array[i],value)){
-            //if (array[i].equals(value)) {
+            if (Objects.equals(array[i], value)) {
+                //if (array[i].equals(value)) {
 
                 return i;
             }
@@ -222,8 +225,8 @@ public class MyArrayList<T> implements MyList<T> {
 
         for (int i = cursor - 1; i >= 0; i--) {
 
-            if (Objects.equals(array[i],value)){
-            //if (array[i].equals(value)) {
+            if (Objects.equals(array[i], value)) {
+                //if (array[i].equals(value)) {
                 return i; // Возвращаем индекс последнего вхождения
             }
         }
@@ -293,9 +296,47 @@ public class MyArrayList<T> implements MyList<T> {
         return result;
     }
 
+    // Невозможно вернуть объект типа интерфейс. Если тип возвращаемого значения интерфейс, это значит, что я
+    // должен вернуть объект класса, который имплементировал и реализовал все методы интерфейса
+
+
+    @Override
+    public Iterator<T> iterator() {
+        return new MyIterator();
+    }
+
     void test() {
         System.out.println(Arrays.toString(array));
     }
+
+    private class MyIterator implements Iterator<T> {
+
+        int currentIndex = 0;
+
+        @Override
+        public boolean hasNext() {
+            return currentIndex < cursor;
+        }
+
+        @Override
+        public T next() {
+
+            return array[currentIndex++];
+
+            /*
+            что равно:
+
+            T value = array[currentIndex];
+            currentIndex++;
+            return value;
+
+             */
+        }
+
+
+    } // End class of MyIterator
+
+
 }
 
 // [5,20]

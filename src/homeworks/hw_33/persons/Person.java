@@ -1,4 +1,4 @@
-package lesson_33.persons;
+package homeworks.hw_33.persons;
 
 public class Person {
   private String email;
@@ -36,7 +36,7 @@ public class Person {
 
   @Override
   public String toString() {
-    return "Person [email=" + email + ", password=" + password + ", toString()=" + super.toString() + "]";
+    return "Person [email=" + email + ", password=" + password + "]";
   }
 
   private boolean isEmailValid(String email) {

@@ -280,23 +280,23 @@ public class MyArrayList<T> implements MyList<T> {
         }
         return false;
 
-
-
     }
-     */
-    // Используем итератор
-    @Override
+
+ */
     public boolean remove(T value) {
-        Iterator<T> iterator = this.iterator();
-        while (iterator.hasNext()) {
-            if (Objects.equals(iterator.next(), value)) {
-                iterator.remove();
-                return true;
-            }
+        int index = indexOf(value); // Находим индекс элемента
+        if (index == -1) {
+            return false; // Если элемента нет, ничего не удаляем
         }
-        return false;
-    }
 
+        // Сдвигаем все элементы влево, чтобы удалить найденный элемент
+        for (int i = index; i < cursor - 1; i++) {
+            array[i] = array[i + 1];
+        }
+
+        array[--cursor] = null; // Уменьшаем курсор и обнуляем последний элемент
+        return true;
+    }
 
     @SuppressWarnings("unchecked")
     public T[] toArray() {

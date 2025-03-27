@@ -53,10 +53,89 @@ public class CollectionExample {
         // strings.add("JS");
         // strings.add("Go Land");
 
+        // Методы addAll, removeAll, retainAll - это программная реализация операций над множествами в математике
+
 
         // addAll(Collection<? extends T> col) - добавить все элементы из указанной коллекции
         strings.addAll(List.of("JS", "Ruby", "Kotlin"));
         System.out.println(strings);
+
+
+        System.out.println("\n===================================================\n");
+
+
+
+
+
+        // removeAll(Collection<?> сов) удаляет все элементы содержащиеся в коллекции соїв из коллекции на которой вызван мето
+        // colA.removeAll(colb) Удаляет из А все элементы, которые содержит кол B (ВЫЧИТАНИЕ)
+        Collection<Integer> colA = new ArrayList<>();
+        colA.addAll(List.of(0,1,2,3,4,5,3,2));
+
+        colA.removeAll(List.of(3,2,1));
+
+        System.out.println("Удаляем: colA.removeAll(List.of(3,2,1)): "+ colA);
+
+        // Пересечение
+        // retainAll (Collection<?> colB) - Оставляет в коллекции вызова только те элементы, которые содержатся в коллекции B
+        // Удаляет из коллекции элементы, которые не содержатся в коллекции B
+
+        // colA.retainAll(colB) - оставляет в А только те элементы, которые есть в B
+
+        colA = new ArrayList<>();
+        Collection<Integer> colB = new ArrayList<>();
+
+        colA.addAll(List.of(10,20,30,40,50,60));
+        colB.addAll(List.of(20,30,40,100));
+
+
+        System.out.println("colA:" + colA);
+        System.out.println("colB:" + colB);
+
+
+        //boolean containsAll (Collection<?> c): возвращает true, если коллекция содержит все элементы из указанной коллекции.
+
+        System.out.println("colA.containsAll(List.of(20, 30):" + colA.containsAll(List.of (20, 30))); // true
+
+
+        colA.retainAll(colB);
+
+        System.out.println("retainAll(colB): "+ colA);
+
+
+        // boolean remove(Object obj) - удаляет элемент из коллекции. Вернет true, если элемент был удален
+
+        System.out.println(
+                "colA.remove(100):"+colA.remove(100)
+        );
+
+
+       // System.out.println("Удаляем 20 из этой коллекции colA:" + colA);
+
+        //System.out.println("colA.remove(20):"+colA.remove(20));
+
+        System.out.println("colA:" + colA);
+
+
+        System.out.println("Удаляем 20 из этой коллекции colA через removeAll:" + colA);
+        // Если нужно удалить все вхождения
+        colA.removeAll((List.of(20)));
+
+        System.out.println("colA:" + colA);
+
+        // clear() - удаляет все элементы из коллекции
+
+        colA.clear();
+
+        System.out.println("colA: " + colA);
+
+
+
+
+
+
+
+
 
 
     }

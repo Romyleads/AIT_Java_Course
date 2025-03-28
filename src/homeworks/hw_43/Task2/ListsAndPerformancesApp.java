@@ -36,8 +36,8 @@ public class ListsAndPerformancesApp {
         List<Integer> linkedList = new LinkedList<>();
         Random random = new Random();
 
-        for (int i = 0; i < 5000; i++) {
-            int val = random.nextInt(1000);
+        for (int i = 0; i < 150_000; i++) {
+            int val = random.nextInt(5000);
             arrayList.add(val);
             linkedList.add(val);
         }

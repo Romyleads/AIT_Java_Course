@@ -176,7 +176,7 @@ public class SetExample {
         // comparator() возвращает компаратор, используемый для упорядочивания элементов в этом множестве
         // если используется естественный порядок - вернется null
 
-        homework("Тестовая строка, что есть в            домашке!!!");
+        homework("Тестовая строка, строка, строка, что есть в            домашке!!!");
 
 
 
@@ -217,7 +217,7 @@ public class SetExample {
 
         // Arrays.asList(T[] array) - преобразует массив в список (List)
 
-        List<String > list = Arrays.asList(words);
+        List<String > list = getUniqueList(Arrays.asList(words));
         System.out.println("list:"+list);
 
 

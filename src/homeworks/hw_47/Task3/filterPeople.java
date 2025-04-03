@@ -19,7 +19,7 @@ public class filterPeople {
 
         // создаем список персон
         List<Person> personList = Arrays.asList(
-                new Person("Alisa", 30, "Berlin"),
+                new Person("Alisa", 22, null),
                 new Person("Bob", 22, "Berlin"),
                 new Person("Charlie", 28, "Hamburg"),
                 new Person("Diana", 35, "Berlin"),
@@ -40,6 +40,10 @@ public class filterPeople {
     private static List<Person> filterPeople(List<Person> people, int minAge, String city) {
         return people.stream()
                 .filter(Objects::nonNull) // фильтр на null
+                // по красоте
+                .filter(p -> Objects.nonNull(p.getCity())) // город не null
+                .filter(p -> Objects.nonNull(p.getAge())) // возраст не null
+
                 .filter(p -> p.getAge() > minAge) // фильтр по возрасту
                 .filter(p -> city.equals(p.getCity())) // фильтр по городу
                 .collect(Collectors.toList()); // сборка

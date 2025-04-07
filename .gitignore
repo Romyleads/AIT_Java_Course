@@ -8,6 +8,12 @@ lib/
 *.iml
 Clone3/
 theory/
+src/homeworks/hw_41/LibraryApp2
+src/homeworks/hw_41/LibraryApp2/
+src/homeworks/hw_41/LibraryApp4
+src/homeworks/hw_41/LibraryApp4/
+src/homeworks/hw_41/LibraryApp4
+src/homeworks/hw_41/LibraryApp4/
 
 ### Eclipse ###
 .apt_generated
